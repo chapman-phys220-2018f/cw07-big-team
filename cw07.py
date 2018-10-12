@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 ###
-# Name: YOUR_FULL_NAME_HERE
+# Name: Jack Savage
 # Student ID: ID_HERE
 # Email: CHAPMAN_EMAIL_HERE
 # Course: PHYS220/MATH220/CPSC220 Fall 2018
@@ -66,10 +66,57 @@ def gen_gaussian_array(a, b, n=1000):
     def gauss(x):
         return (1/math.sqrt(2*math.pi))*math.exp(-x**2/2)
     
-    gf = np.vectorize(gauss)
-    g = gf(x)
+    gauss_vectorized = np.vectorize(gauss)
+    g = gauss_vectorized(x)
     return (x, g)
 
+def sinc(x):
+    return math.sin(x)/x
+
+def gen_sinc_array(a,b, n=1000):
+    """gen_sinc_array(a, b, n=1000)
+    Generate values of a sinc function, including its
+    domain and range, stored as a pair of numpy arrays.
+    
+    Args:
+        a (float) : Lower bound of domain
+        b (float) : Upper bound of domain
+        n (int, optional) : Number of points in domain, defaults to 1000.
+    
+    Returns:
+        (x, g) : Pair of numpy arrays of float64
+            x  : [a, ..., b] Array of n equally spaced float64 between a and b
+            g  : [g(a), ..., g(b)] Array of sinc values matched to x
+    """
+    x = np.linspace(a,b,n,endpoint=True)
+    y = np.sin(x)
+    y = np.divide(y,x,where=x!=0)
+    return x,y
+
+def gen_sinc_list(a,b, n=1000):
+        """gen_sinc_list(a, b, n=1000)
+    Generate values of a sinc function, including its
+    domain and range, stored as a pair of python lists.
+    
+    Args:
+        a (float) : Lower bound of domain
+        b (float) : Upper bound of domain
+        n (int, optional) : Number of points in domain, defaults to 1000.
+    
+    Returns:
+        (x, g) : Pair of lists of floats
+            x  : [a, ..., b] List of n equally spaced floats between a and b
+            g  : [g(a), ..., g(b)] List of sinc values matched to x
+    """
+        dx = (b-a)/(n-1)
+        x = [a + k*dx for k in range(n)]
+        y = []
+        for element in x:
+            if element != 0:
+                y.append(math.sin(element)/element)
+            else:
+                y.append(0)
+        return x,y
 
 def main(a,b,n=1000):
     """main(a, b, n=1000)
