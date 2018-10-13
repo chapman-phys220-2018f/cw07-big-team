@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.com/chapman-phys220-2018f/CHANGEME.svg?branch=master)](https://travis-ci.com/chapman-phys220-2018f/CHANGEME)
+[![Build Status](https://travis-ci.com/chapman-phys220-2018f/cw07-big-team.svg?branch=master)](https://travis-ci.com/chapman-phys220-2018f/cw07-big-team)
 
 # PHYS220/MATH220/CPSC220 CW 7
 
-**Author(s):** **CHANGEME**
+**Author(s):** **Raha and Jack**
 
 ## Specification
 
@@ -17,9 +17,8 @@ Pro-tip: using git to manage conflicts on Jupyter notebooks is a pain. I recomme
 
 ## Assessment
 
-Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have. You can use the GitHub web interface to edit this file directly for now.
+This assignment was an introduction to numpy. The numpy library provides a new collection type (the numpy array) that runs quickly due to a C++ backend. There are also many functions to create and transform these arrays. Many of the transformation functions are vectorized, which means we can apply them to the whole array object rather than having to iterate through the array and apply it to each element seperately. This is useful for dealing with large scale data manipulation and is a building block for many other scientific python libraries (pandas, scikit-learn, etc)
 
-**CHANGEME**
 
 ## Honor Pledge
 
@@ -30,4 +29,4 @@ I pledge that all the work in this repository is my own with only the following 
 
 Signed,
 
-**YOURNAMES**
+**Jack and Raha**
